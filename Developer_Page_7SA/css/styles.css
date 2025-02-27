@@ -11,7 +11,31 @@
 html{
     font-size: 62.5%;
     font-family: Krub,Arial, Helvetica, sans-serif;
+    /*Ajuste para modelo de caja "model box"*/
+    box-sizing: border-box;
 }
+
+* *::before. *::after{
+    /*hack para los modelos de caja*/
+    box-sizing: inherit;
+}
+
+/*Tipografía*/
+
+h1{
+    font-size: 3.8rem;
+}
+h2{
+ font-size: 2.8rem;
+}
+h3{
+    font-size: 1.8rem;
+}
+
+h1,h2,h3{
+    text-align: center ;
+}
+
 body{
     /*16 px es el estandar para un navegador web*/
     font-size: 16px;
@@ -67,4 +91,56 @@ body{
     background-repeat: no-repeat;
     /*cover cubre la imagen con todo el tamaño posible*/
     background-size: cover;
+    height: 450px; /*altura del elemento*/
+    position: relative; /*manipular la posición,el padre siembr
+    debe ser relativo*/
 }
+
+.contenido-hero{
+    /*el hijo siempre debe ser absoluto*/
+    position: absolute;
+    background-color: rgba(0, 0, 0, .7); /*red,gree,blue,alpha(opacidad)*/
+    width: 100%;
+    height: 100%;
+    /*Alinear vertical y horizontalmente*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.contenido-hero p,h2{
+    color: var(--blanco);
+}
+.ubicacion{
+    display: flex;
+    align-items: flex-end;
+}
+
+.boton{
+    /*color del texto y el fondo*/
+    background-color: var(--secuandario);
+    color: var(--blanco);
+    padding: 1rem,3rem;
+    margin-top: 5rem;
+    font-size: 2rem;
+    /*subrayado*/
+    text-decoration: none;
+    /*texto mayuscula*/
+    text-transform: uppercase;
+    /*texto negrita*/
+    font-weight: bold;
+    /*borde redondeado*/
+    border-radius: .5rem;
+    width: 90%;
+    height: 10%;
+    text-align: center;
+}
+
+
+/*cuando se haga responsive el boton queda grande*/
+@media (min-width: 768px) {
+    .boton{
+        width: auto;
+    }
+ 
+ }
