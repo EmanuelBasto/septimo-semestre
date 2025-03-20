@@ -120,8 +120,8 @@ body{
     /*color del texto y el fondo*/
     background-color: var(--secuandario);
     color: var(--blanco);
-    padding: 1rem,3rem;
-    margin-top: 5rem;
+    padding: 1rem 3rem;
+    margin-top: 1rem;
     font-size: 2rem;
     /*subrayado*/
     text-decoration: none;
@@ -131,8 +131,7 @@ body{
     font-weight: bold;
     /*borde redondeado*/
     border-radius: .5rem;
-    width: 90%;
-    height: 10%;
+    
     text-align: center;
 }
 
@@ -144,3 +143,42 @@ body{
     }
  
  }
+ /*Mis servicios*/
+
+ @media (min-width: 768px) {
+    .servicios{
+        display: grid;
+        /*define el area de las columnas*/
+        /*grid-template-columns: 1fr 1fr 1fr;*/
+        /*grid-template-columns: 33.33% 33.33% 33.33%*/
+        grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .servicio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .servicio h3{
+    color: var(--secuandario);
+    /*subrayado "none" o normal con "normal"*/
+    font-weight: normal;
+  }
+  .servicio p{
+    /*internilineado*/
+    line-height: 2;
+    text-align: center;
+  }
+  .servicio .iconos{
+    height: 15rem;
+    width: 15rem;
+    background-color: var(--primario);
+    border-radius: 50%;
+    /*cada que quiera ponerlo en medio es FLEX*/
+    display: flex;
+    /*alinear de forma Horizontal*/
+    justify-content: space-evenly;
+    /*alinear de forma orizontal*/
+    align-items: center;
+  }
